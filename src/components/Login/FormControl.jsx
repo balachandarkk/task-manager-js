@@ -1,0 +1,24 @@
+import React from 'react';
+import { FormGroup, Label, Input, FormFeedback } from 'reactstrap';
+
+const FormControl = props => {
+
+  const { label, type, error, handleChange, value } = props;
+  const name = label.toLowerCase();
+
+    return (
+      <FormGroup>
+          <Label for={name}>{label}</Label>
+          <Input 
+            type={type} 
+            id={name} 
+            onChange={handleChange} 
+            value={value}
+            invalid={error}
+          />
+          <FormFeedback>{error}</FormFeedback>
+      </FormGroup>
+    )
+}
+
+export default FormControl
